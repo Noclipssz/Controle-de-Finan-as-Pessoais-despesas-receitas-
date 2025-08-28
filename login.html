@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinanceTracker Pro - Login</title>
+    <link rel="stylesheet" href="auth.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-background">
+            <div class="floating-shapes">
+                <div class="shape shape-1"></div>
+                <div class="shape shape-2"></div>
+                <div class="shape shape-3"></div>
+                <div class="shape shape-4"></div>
+                <div class="shape shape-5"></div>
+            </div>
+        </div>
+        
+        <div class="auth-content">
+            <div class="auth-card">
+                <div class="auth-header">
+                    <div class="logo">
+                        <i class="fas fa-chart-line"></i>
+                        <span>FinanceTracker Pro</span>
+                    </div>
+                    <p class="subtitle">Controle suas finanças de forma inteligente</p>
+                </div>
+
+                <!-- Formulário de Login -->
+                <div id="login-form" class="form-section active">
+                    <h2>Bem-vindo de volta!</h2>
+                    <p class="form-description">Entre na sua conta para continuar</p>
+                    
+                    <div id="login-message" class="message" style="display: none;"></div>
+                    
+                    <form id="login-form-element">
+                        <div class="input-group">
+                            <div class="input-icon">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <input type="text" id="login-username" placeholder="Nome de usuário" required>
+                        </div>
+                        
+                        <div class="input-group">
+                            <div class="input-icon">
+                                <i class="fas fa-lock"></i>
+                            </div>
+                            <input type="password" id="login-password" placeholder="Senha" required>
+                            <button type="button" class="password-toggle" id="toggle-login-password">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                        
+                        <div class="form-options">
+                            <label class="checkbox-container">
+                                <input type="checkbox" id="remember-me">
+                                <span class="checkmark"></span>
+                                Lembrar de mim
+                            </label>
+                            <a href="#" class="forgot-password">Esqueceu a senha?</a>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary" id="login-btn">
+                            <span class="btn-text">Entrar</span>
+                            <div class="btn-loader" style="display: none;">
+                                <i class="fas fa-spinner fa-spin"></i>
+                            </div>
+                        </button>
+                    </form>
+                    
+                    <div class="form-footer">
+                        <p>Não tem uma conta? 
+                            <a href="#" id="show-register" class="link-primary">Cadastre-se gratuitamente</a>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Formulário de Registro -->
+                <div id="register-form" class="form-section">
+                    <h2>Crie sua conta</h2>
+                    <p class="form-description">Comece a controlar suas finanças hoje mesmo</p>
+                    
+                    <div id="register-message" class="message" style="display: none;"></div>
+                    
+                    <form id="register-form-element">
+                        <div class="input-group">
+                            <div class="input-icon">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <input type="text" id="register-username" placeholder="Nome de usuário" required>
+                            <div class="input-feedback" id="username-feedback"></div>
+                        </div>
+                        
+                        <div class="input-group">
+                            <div class="input-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <input type="email" id="register-email" placeholder="E-mail (opcional)">
+                        </div>
+                        
+                        <div class="input-group">
+                            <div class="input-icon">
+                                <i class="fas fa-lock"></i>
+                            </div>
+                            <input type="password" id="register-password" placeholder="Senha" required>
+                            <button type="button" class="password-toggle" id="toggle-register-password">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                            <div class="password-strength" id="password-strength">
+                                <div class="strength-bar">
+                                    <div class="strength-fill"></div>
+                                </div>
+                                <span class="strength-text">Digite uma senha</span>
+                            </div>
+                        </div>
+                        
+                        <div class="input-group">
+                            <div class="input-icon">
+                                <i class="fas fa-lock"></i>
+                            </div>
+                            <input type="password" id="register-confirm" placeholder="Confirmar senha" required>
+                            <div class="input-feedback" id="confirm-feedback"></div>
+                        </div>
+                        
+                        <div class="form-options">
+                            <label class="checkbox-container">
+                                <input type="checkbox" id="accept-terms" required>
+                                <span class="checkmark"></span>
+                                Aceito os <a href="#" class="link-primary">termos de uso</a> e 
+                                <a href="#" class="link-primary">política de privacidade</a>
+                            </label>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary" id="register-btn">
+                            <span class="btn-text">Criar conta</span>
+                            <div class="btn-loader" style="display: none;">
+                                <i class="fas fa-spinner fa-spin"></i>
+                            </div>
+                        </button>
+                    </form>
+                    
+                    <div class="form-footer">
+                        <p>Já tem uma conta? 
+                            <a href="#" id="show-login" class="link-primary">Faça login</a>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Demo Account -->
+                <div class="demo-section">
+                    <div class="divider">
+                        <span>ou</span>
+                    </div>
+                    <button class="btn btn-secondary" id="demo-btn">
+                        <i class="fas fa-play"></i>
+                        Experimentar conta demo
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Features -->
+            <div class="features-section">
+                <h3>Por que escolher o FinanceTracker Pro?</h3>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-pie"></i>
+                        </div>
+                        <h4>Relatórios Detalhados</h4>
+                        <p>Visualize seus gastos com gráficos interativos e relatórios personalizados</p>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-bullseye"></i>
+                        </div>
+                        <h4>Metas Financeiras</h4>
+                        <p>Defina e acompanhe suas metas de economia e investimento</p>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-tags"></i>
+                        </div>
+                        <h4>Categorização Inteligente</h4>
+                        <p>Organize suas transações com categorias personalizáveis</p>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h4>Acesso Multiplataforma</h4>
+                        <p>Use em qualquer dispositivo, seus dados sempre sincronizados</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="auth.js"></script>
+</body>
+</html>
+
